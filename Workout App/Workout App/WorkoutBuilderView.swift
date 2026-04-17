@@ -1,8 +1,22 @@
-//
-//  WorkoutBuilderView.swift
-//  Workout App
-//
-//  Created by DT on 4/16/26.
-//
+import SwiftUI
 
-import Foundation
+struct WorkoutBuilderView: View {
+    var body: some View {
+        VStack {
+            Text("Workout Builder")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+            
+            Text("Building tools will go here.")
+                .foregroundColor(.secondary)
+            
+            Spacer()
+        }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+#Preview {
+    WorkoutBuilderView()
+}
