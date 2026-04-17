@@ -1,21 +1,30 @@
-//
-//  ContentView.swift
-//  Workout App
-//
-//  Created by DT on 4/16/26.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack(spacing: 20) {
+                NavigationLink(destination: WorkoutBuilderView()) {
+                    HomeButtonView(title: "Workout Builder", color: .blue)
+                }
+                
+                NavigationLink(destination: WorkoutView()) {
+                    HomeButtonView(title: "Workout", color: .green)
+                }
+                
+                NavigationLink(destination: StrengthTrackerView()) {
+                    HomeButtonView(title: "Strength Tracker", color: .orange)
+                }
+                
+                NavigationLink(destination: ExerciseGalleryView()) {
+                    HomeButtonView(title: "Exercise Gallery", color: .purple)
+                }
+                
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Home")
         }
-        .padding()
     }
 }
 
