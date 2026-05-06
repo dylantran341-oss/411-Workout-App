@@ -11,7 +11,7 @@ public import CoreData
 
 public typealias PlansCoreDataClassSet = NSSet
 
-@objc(Plans)
+
 public class Plans: NSManagedObject {
 
 }

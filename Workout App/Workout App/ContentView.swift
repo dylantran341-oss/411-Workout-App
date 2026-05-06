@@ -4,11 +4,11 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                NavigationLink(destination: WorkoutBuilderView()) {
+                NavigationLink(destination: WorkoutView()) {
                     HomeButtonView(title: "Workout Builder", color: .blue)
                 }
                 
-                NavigationLink(destination: WorkoutView()) {
+                NavigationLink(destination: SelectWorkoutScreenView()) {
                     HomeButtonView(title: "Workout", color: .green)
                 }
                 
