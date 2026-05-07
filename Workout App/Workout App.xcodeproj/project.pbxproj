@@ -7,27 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3DC18162FAC345C00168F16 /* Exercises+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18102FAC345C00168F16 /* Exercises+CoreDataClass.swift */; };
-		D3DC18172FAC345C00168F16 /* Plans+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18152FAC345C00168F16 /* Plans+CoreDataProperties.swift */; };
-		D3DC18182FAC345C00168F16 /* Exercises+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18112FAC345C00168F16 /* Exercises+CoreDataProperties.swift */; };
-		D3DC18192FAC345C00168F16 /* Join+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18122FAC345C00168F16 /* Join+CoreDataClass.swift */; };
-		D3DC181A2FAC345C00168F16 /* Join+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18132FAC345C00168F16 /* Join+CoreDataProperties.swift */; };
-		D3DC181B2FAC345C00168F16 /* Plans+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18142FAC345C00168F16 /* Plans+CoreDataClass.swift */; };
+		187351BE2FAD362A00B7BFE3 /* Sets+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351BC2FAD362A00B7BFE3 /* Sets+CoreDataClass.swift */; };
+		187351BF2FAD362A00B7BFE3 /* Plans+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351B92FAD362A00B7BFE3 /* Plans+CoreDataProperties.swift */; };
+		187351C02FAD362A00B7BFE3 /* Exercises+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351B52FAD362A00B7BFE3 /* Exercises+CoreDataProperties.swift */; };
+		187351C12FAD362A00B7BFE3 /* Join+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351B62FAD362A00B7BFE3 /* Join+CoreDataClass.swift */; };
+		187351C22FAD362A00B7BFE3 /* Sets+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351BD2FAD362A00B7BFE3 /* Sets+CoreDataProperties.swift */; };
+		187351C32FAD362A00B7BFE3 /* Join+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351B72FAD362A00B7BFE3 /* Join+CoreDataProperties.swift */; };
+		187351C42FAD362A00B7BFE3 /* Routine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351BA2FAD362A00B7BFE3 /* Routine+CoreDataClass.swift */; };
+		187351C52FAD362A00B7BFE3 /* Exercises+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351B42FAD362A00B7BFE3 /* Exercises+CoreDataClass.swift */; };
+		187351C62FAD362A00B7BFE3 /* Plans+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351B82FAD362A00B7BFE3 /* Plans+CoreDataClass.swift */; };
+		187351C72FAD362A00B7BFE3 /* Routine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187351BB2FAD362A00B7BFE3 /* Routine+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1873511E2F91DFA500B7BFE3 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3DC18102FAC345C00168F16 /* Exercises+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D3DC18112FAC345C00168F16 /* Exercises+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D3DC18122FAC345C00168F16 /* Join+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Join+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D3DC18132FAC345C00168F16 /* Join+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Join+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D3DC18142FAC345C00168F16 /* Plans+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plans+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D3DC18152FAC345C00168F16 /* Plans+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plans+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		187351B42FAD362A00B7BFE3 /* Exercises+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Exercises+CoreDataClass.swift"; path = "Workout App/Exercises+CoreDataClass.swift"; sourceTree = "<group>"; };
+		187351B52FAD362A00B7BFE3 /* Exercises+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Exercises+CoreDataProperties.swift"; path = "Workout App/Exercises+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		187351B62FAD362A00B7BFE3 /* Join+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Join+CoreDataClass.swift"; path = "Workout App/Join+CoreDataClass.swift"; sourceTree = "<group>"; };
+		187351B72FAD362A00B7BFE3 /* Join+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Join+CoreDataProperties.swift"; path = "Workout App/Join+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		187351B82FAD362A00B7BFE3 /* Plans+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Plans+CoreDataClass.swift"; path = "Workout App/Plans+CoreDataClass.swift"; sourceTree = "<group>"; };
+		187351B92FAD362A00B7BFE3 /* Plans+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Plans+CoreDataProperties.swift"; path = "Workout App/Plans+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		187351BA2FAD362A00B7BFE3 /* Routine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Routine+CoreDataClass.swift"; path = "Workout App/Routine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		187351BB2FAD362A00B7BFE3 /* Routine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Routine+CoreDataProperties.swift"; path = "Workout App/Routine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		187351BC2FAD362A00B7BFE3 /* Sets+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Sets+CoreDataClass.swift"; path = "Workout App/Sets+CoreDataClass.swift"; sourceTree = "<group>"; };
+		187351BD2FAD362A00B7BFE3 /* Sets+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Sets+CoreDataProperties.swift"; path = "Workout App/Sets+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		187351DC2FAD386400B7BFE3 /* Exceptions for "Workout App" folder in "Workout App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Exercises+CoreDataClass.swift",
+				"Exercises+CoreDataProperties.swift",
+				"Join+CoreDataClass.swift",
+				"Join+CoreDataProperties.swift",
+				"Plans+CoreDataClass.swift",
+				"Plans+CoreDataProperties.swift",
+				"Routine+CoreDataClass.swift",
+				"Routine+CoreDataProperties.swift",
+				"Sets+CoreDataClass.swift",
+				"Sets+CoreDataProperties.swift",
+			);
+			target = 1873511D2F91DFA500B7BFE3 /* Workout App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		187351202F91DFA500B7BFE3 /* Workout App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				187351DC2FAD386400B7BFE3 /* Exceptions for "Workout App" folder in "Workout App" target */,
+			);
 			path = "Workout App";
 			sourceTree = "<group>";
 		};
@@ -47,12 +77,16 @@
 		187351152F91DFA500B7BFE3 = {
 			isa = PBXGroup;
 			children = (
-				D3DC18102FAC345C00168F16 /* Exercises+CoreDataClass.swift */,
-				D3DC18112FAC345C00168F16 /* Exercises+CoreDataProperties.swift */,
-				D3DC18122FAC345C00168F16 /* Join+CoreDataClass.swift */,
-				D3DC18132FAC345C00168F16 /* Join+CoreDataProperties.swift */,
-				D3DC18142FAC345C00168F16 /* Plans+CoreDataClass.swift */,
-				D3DC18152FAC345C00168F16 /* Plans+CoreDataProperties.swift */,
+				187351B42FAD362A00B7BFE3 /* Exercises+CoreDataClass.swift */,
+				187351B52FAD362A00B7BFE3 /* Exercises+CoreDataProperties.swift */,
+				187351B62FAD362A00B7BFE3 /* Join+CoreDataClass.swift */,
+				187351B72FAD362A00B7BFE3 /* Join+CoreDataProperties.swift */,
+				187351B82FAD362A00B7BFE3 /* Plans+CoreDataClass.swift */,
+				187351B92FAD362A00B7BFE3 /* Plans+CoreDataProperties.swift */,
+				187351BA2FAD362A00B7BFE3 /* Routine+CoreDataClass.swift */,
+				187351BB2FAD362A00B7BFE3 /* Routine+CoreDataProperties.swift */,
+				187351BC2FAD362A00B7BFE3 /* Sets+CoreDataClass.swift */,
+				187351BD2FAD362A00B7BFE3 /* Sets+CoreDataProperties.swift */,
 				187351202F91DFA500B7BFE3 /* Workout App */,
 				1873511F2F91DFA500B7BFE3 /* Products */,
 			);
@@ -140,12 +174,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3DC18162FAC345C00168F16 /* Exercises+CoreDataClass.swift in Sources */,
-				D3DC18172FAC345C00168F16 /* Plans+CoreDataProperties.swift in Sources */,
-				D3DC18182FAC345C00168F16 /* Exercises+CoreDataProperties.swift in Sources */,
-				D3DC18192FAC345C00168F16 /* Join+CoreDataClass.swift in Sources */,
-				D3DC181A2FAC345C00168F16 /* Join+CoreDataProperties.swift in Sources */,
-				D3DC181B2FAC345C00168F16 /* Plans+CoreDataClass.swift in Sources */,
+				187351BE2FAD362A00B7BFE3 /* Sets+CoreDataClass.swift in Sources */,
+				187351BF2FAD362A00B7BFE3 /* Plans+CoreDataProperties.swift in Sources */,
+				187351C02FAD362A00B7BFE3 /* Exercises+CoreDataProperties.swift in Sources */,
+				187351C12FAD362A00B7BFE3 /* Join+CoreDataClass.swift in Sources */,
+				187351C22FAD362A00B7BFE3 /* Sets+CoreDataProperties.swift in Sources */,
+				187351C32FAD362A00B7BFE3 /* Join+CoreDataProperties.swift in Sources */,
+				187351C42FAD362A00B7BFE3 /* Routine+CoreDataClass.swift in Sources */,
+				187351C52FAD362A00B7BFE3 /* Exercises+CoreDataClass.swift in Sources */,
+				187351C62FAD362A00B7BFE3 /* Plans+CoreDataClass.swift in Sources */,
+				187351C72FAD362A00B7BFE3 /* Routine+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +248,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -266,6 +305,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};

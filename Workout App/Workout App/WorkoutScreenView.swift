@@ -100,7 +100,7 @@ struct WorkoutScreenView: View {
     }
     
     private func textViews(num: Int) {
-        for _ in 1...num {
+        for _ in 0..<num {
             weights.append("")
             reps.append("")
         }

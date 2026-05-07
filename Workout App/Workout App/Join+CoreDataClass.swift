@@ -2,7 +2,7 @@
 //  Join+CoreDataClass.swift
 //  Workout App
 //
-//  Created by Maryann Kwiat on 5/6/26.
+//  Created by DT on 5/7/26.
 //
 //
 

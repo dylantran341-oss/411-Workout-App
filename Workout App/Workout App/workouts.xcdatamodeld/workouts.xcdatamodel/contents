@@ -27,11 +27,11 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="Routine" representedClassName="Routine" syncable="YES" codeGenerationType="class">
+    <entity name="Routine" representedClassName="Routine" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sets" inverseName="routine" inverseEntity="Sets"/>
     </entity>
-    <entity name="Sets" representedClassName="Sets" syncable="YES" codeGenerationType="class">
+    <entity name="Sets" representedClassName="Sets" syncable="YES">
         <attribute name="exerciseName" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

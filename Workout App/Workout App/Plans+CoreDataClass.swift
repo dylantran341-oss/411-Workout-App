@@ -2,7 +2,7 @@
 //  Plans+CoreDataClass.swift
 //  Workout App
 //
-//  Created by Maryann Kwiat on 5/6/26.
+//  Created by DT on 5/7/26.
 //
 //
 
@@ -11,7 +11,7 @@ public import CoreData
 
 public typealias PlansCoreDataClassSet = NSSet
 
-
+@objc(Plans)
 public class Plans: NSManagedObject {
 
 }
