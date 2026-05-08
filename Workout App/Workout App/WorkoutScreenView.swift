@@ -12,14 +12,19 @@ import Charts
 
 struct WorkoutScreenView: View {
     @Environment(\.managedObjectContext) var context
-    @State var weights: [String] = []
-    @State var reps: [String] = []
+    
+    //@State var weights: [String] = [[]]
+    //@State var reps: [String] = [[]]
     @State private var joins: [Join] = []
+    @State private var Elogs: [Exercise_log] = []
+    @State private var Slogs: [Set_log] = []
+    @State private var iteration: Int = 0
+    @State private var lengths: [Int] = [0]
     var plan: Plans? = nil
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                ForEach(joins) { join in
+                ForEach(Array(joins.enumerated()), id: \.offset) { i, join in
                     VStack(alignment: .leading, spacing: 16) {
                         // Header Row
                         HStack {
@@ -29,36 +34,38 @@ struct WorkoutScreenView: View {
                             
                             Spacer()
                             // Delete Exercise Button
-                            Button(action: {
-                                
-                            })
-                            {
-                                Label("Add set",systemImage: "plus.circle")
-                                    .foregroundColor(.green)
-                                    .padding(4)
-                            }
+//                            Button(action: {
+//                                let temp = Set_log(context: context)
+//                                temp.date = Elogs[iteration]
+//                            })
+//                            {
+//                                Label("Add set",systemImage: "plus.circle")
+//                                    .foregroundColor(.green)
+//                                    .padding(4)
+//                            }
                             
                         }
                         
-                        ForEach(1..<Int(join.sets)+1, id: \.self) { i in
+                        ForEach($Slogs[lengths[i]..<lengths[i+1]], id:\.self) { $slog in
                             // Exercise Name Input
-                            Text("Set \(i): ")
+                            Text("Set: ")
                                 .font(.subheadline)
                                 .fontWeight(.bold)
                             HStack{
                                 Text("Weight:")
-                                TextField("lbs", text: $weights[i])
+                                TextField("lbs", text: $slog.wrapped_weight).keyboardType(.numberPad)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .frame(width: 50, height: 40)
                                     .cornerRadius(8)
                             }
                             HStack{
                                 Text("Reps:")
-                                TextField("Reps", text: $reps[i])
+                                TextField("Reps", text: $slog.wrapped_reps).keyboardType(.numberPad)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .frame(width: 50, height: 40)
                                     .cornerRadius(8)
                             }
+                            
                         }
                     }
                     .padding()
@@ -80,6 +87,12 @@ struct WorkoutScreenView: View {
 //                .aspectRatio(1, contentMode: .fit)
 //                Spacer()
 //            }
+            Button(action: {try? context.save()})
+            {
+            Label("FINISH WORKOUT",systemImage: "plus.circle")
+                .foregroundColor(.green)
+                .padding(4)
+            }
         }
         .navigationTitle("Workout Tracker")
         .navigationBarTitleDisplayMode(.inline)
@@ -87,22 +100,35 @@ struct WorkoutScreenView: View {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
+    private func iterate() {
+        iteration+=1
+    }
     private func loadJoins() {
         guard let plan = plan else { return }
         let request: NSFetchRequest<Join> = Join.fetchRequest()
         request.predicate = NSPredicate(format: "workout.name == %@", plan.name ?? "")
         do {
             joins = try context.fetch(request)
+            var i = 0
             for join in joins {
-                textViews(num: Int(join.sets))
+                
+                Elogs.append(Exercise_log(context: context))
+                Elogs[i].exercise = join.exercise
+                Elogs[i].date = Date()
+                textViews(num: Int(join.sets), log: Elogs[i])
+                i += 1
+            }
+            for j in 0..<Elogs.count {
+                lengths.append(Elogs[j].setArray.count + lengths[j])
             }
         } catch {print("Joins wasn't got")}
     }
     
-    private func textViews(num: Int) {
+    private func textViews(num: Int, log : Exercise_log) {
         for _ in 1...num {
-            weights.append("")
-            reps.append("")
+            let Slog = Set_log(context: context)
+            Slog.date = log
+            Slogs.append(Slog)
         }
     }
 }

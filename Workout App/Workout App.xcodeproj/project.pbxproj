@@ -7,22 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3DC18162FAC345C00168F16 /* Exercises+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18102FAC345C00168F16 /* Exercises+CoreDataClass.swift */; };
 		D3DC18172FAC345C00168F16 /* Plans+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18152FAC345C00168F16 /* Plans+CoreDataProperties.swift */; };
-		D3DC18182FAC345C00168F16 /* Exercises+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18112FAC345C00168F16 /* Exercises+CoreDataProperties.swift */; };
 		D3DC18192FAC345C00168F16 /* Join+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18122FAC345C00168F16 /* Join+CoreDataClass.swift */; };
 		D3DC181A2FAC345C00168F16 /* Join+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18132FAC345C00168F16 /* Join+CoreDataProperties.swift */; };
 		D3DC181B2FAC345C00168F16 /* Plans+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18142FAC345C00168F16 /* Plans+CoreDataClass.swift */; };
+		D3DC18402FAD1C6600168F16 /* Exercises+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC183A2FAD1C6600168F16 /* Exercises+CoreDataClass.swift */; };
+		D3DC18412FAD1C6600168F16 /* Exercises+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC183B2FAD1C6600168F16 /* Exercises+CoreDataProperties.swift */; };
+		D3DC18482FAD1CF000168F16 /* Exercise_log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18452FAD1CF000168F16 /* Exercise_log+CoreDataProperties.swift */; };
+		D3DC18492FAD1CF000168F16 /* Set_log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18472FAD1CF000168F16 /* Set_log+CoreDataProperties.swift */; };
+		D3DC184A2FAD1CF000168F16 /* Set_log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18462FAD1CF000168F16 /* Set_log+CoreDataClass.swift */; };
+		D3DC184B2FAD1CF000168F16 /* Exercise_log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC18442FAD1CF000168F16 /* Exercise_log+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1873511E2F91DFA500B7BFE3 /* Workout App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3DC18102FAC345C00168F16 /* Exercises+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D3DC18112FAC345C00168F16 /* Exercises+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3DC18122FAC345C00168F16 /* Join+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Join+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D3DC18132FAC345C00168F16 /* Join+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Join+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3DC18142FAC345C00168F16 /* Plans+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plans+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D3DC18152FAC345C00168F16 /* Plans+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plans+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3DC183A2FAD1C6600168F16 /* Exercises+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3DC183B2FAD1C6600168F16 /* Exercises+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercises+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3DC18442FAD1CF000168F16 /* Exercise_log+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise_log+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3DC18452FAD1CF000168F16 /* Exercise_log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise_log+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3DC18462FAD1CF000168F16 /* Set_log+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set_log+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3DC18472FAD1CF000168F16 /* Set_log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set_log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,8 +55,12 @@
 		187351152F91DFA500B7BFE3 = {
 			isa = PBXGroup;
 			children = (
-				D3DC18102FAC345C00168F16 /* Exercises+CoreDataClass.swift */,
-				D3DC18112FAC345C00168F16 /* Exercises+CoreDataProperties.swift */,
+				D3DC18442FAD1CF000168F16 /* Exercise_log+CoreDataClass.swift */,
+				D3DC18452FAD1CF000168F16 /* Exercise_log+CoreDataProperties.swift */,
+				D3DC18462FAD1CF000168F16 /* Set_log+CoreDataClass.swift */,
+				D3DC18472FAD1CF000168F16 /* Set_log+CoreDataProperties.swift */,
+				D3DC183A2FAD1C6600168F16 /* Exercises+CoreDataClass.swift */,
+				D3DC183B2FAD1C6600168F16 /* Exercises+CoreDataProperties.swift */,
 				D3DC18122FAC345C00168F16 /* Join+CoreDataClass.swift */,
 				D3DC18132FAC345C00168F16 /* Join+CoreDataProperties.swift */,
 				D3DC18142FAC345C00168F16 /* Plans+CoreDataClass.swift */,
@@ -140,12 +152,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3DC18162FAC345C00168F16 /* Exercises+CoreDataClass.swift in Sources */,
+				D3DC18402FAD1C6600168F16 /* Exercises+CoreDataClass.swift in Sources */,
+				D3DC18412FAD1C6600168F16 /* Exercises+CoreDataProperties.swift in Sources */,
 				D3DC18172FAC345C00168F16 /* Plans+CoreDataProperties.swift in Sources */,
-				D3DC18182FAC345C00168F16 /* Exercises+CoreDataProperties.swift in Sources */,
 				D3DC18192FAC345C00168F16 /* Join+CoreDataClass.swift in Sources */,
 				D3DC181A2FAC345C00168F16 /* Join+CoreDataProperties.swift in Sources */,
 				D3DC181B2FAC345C00168F16 /* Plans+CoreDataClass.swift in Sources */,
+				D3DC18482FAD1CF000168F16 /* Exercise_log+CoreDataProperties.swift in Sources */,
+				D3DC18492FAD1CF000168F16 /* Set_log+CoreDataProperties.swift in Sources */,
+				D3DC184A2FAD1CF000168F16 /* Set_log+CoreDataClass.swift in Sources */,
+				D3DC184B2FAD1CF000168F16 /* Exercise_log+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

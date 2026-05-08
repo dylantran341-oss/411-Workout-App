@@ -2,7 +2,7 @@
 //  Exercises+CoreDataProperties.swift
 //  Workout App
 //
-//  Created by Maryann Kwiat on 5/6/26.
+//  Created by Maryann Kwiat on 5/7/26.
 //
 //
 
@@ -23,6 +23,7 @@ extension Exercises {
     @NSManaged public var picture: Data?
     @NSManaged public var reps: Bool
     @NSManaged public var partof: NSSet?
+    @NSManaged public var logs: NSSet?
 
 }
 
@@ -40,6 +41,23 @@ extension Exercises {
 
     @objc(removePartof:)
     @NSManaged public func removeFromPartof(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for logs
+extension Exercises {
+
+    @objc(addLogsObject:)
+    @NSManaged public func addToLogs(_ value: Exercise_log)
+
+    @objc(removeLogsObject:)
+    @NSManaged public func removeFromLogs(_ value: Exercise_log)
+
+    @objc(addLogs:)
+    @NSManaged public func addToLogs(_ values: NSSet)
+
+    @objc(removeLogs:)
+    @NSManaged public func removeFromLogs(_ values: NSSet)
 
 }
 
