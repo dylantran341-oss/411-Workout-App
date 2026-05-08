@@ -1,5 +1,5 @@
 import SwiftUI
-
+import CoreData
 // Data Models
 struct ExerciseSet: Identifiable, Equatable {
     let id = UUID()
@@ -15,12 +15,18 @@ struct WorkoutExercise: Identifiable, Equatable {
 
 // Main View
 struct WorkoutView: View {
+    @Environment(\.managedObjectContext) var context
+    
+    @FetchRequest(sortDescriptors: [])
+    var Exercisedata: FetchedResults<Exercises>
+    
     @State private var exercises: [WorkoutExercise] = [WorkoutExercise()]
-
+    @State private var workoutName: String = ""
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                
+                TextField("Workout Name", text: $workoutName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 ForEach($exercises) { $exercise in
                     
                     let exerciseIndex = exercises.firstIndex(where: { $0.id == exercise.id }) ?? 0
@@ -169,7 +175,8 @@ struct WorkoutView: View {
                 
                 // Finish Workout Button
                 Button(action: {
-                }) {
+                    save_workout()
+                }){
                     Text("Finish Workout")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -181,17 +188,57 @@ struct WorkoutView: View {
                 }
                 .padding(.top, 10)
                 
+                .padding()
             }
-            .padding()
-        }
-        .navigationTitle("Workout Tracker")
-        .navigationBarTitleDisplayMode(.inline)
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            .navigationTitle("Workout Tracker")
+            .navigationBarTitleDisplayMode(.inline)
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
         }
     }
+    func save_workout() {
+        let request: NSFetchRequest<Plans> = Plans.fetchRequest()
+        var currentPlan : Plans?
+        var triggered: Bool = false
+        do {
+            let plans = try context.fetch(request)
+            for plan in plans {
+                if plan.name == workoutName {
+                    currentPlan = plan
+                    triggered = true
+                    break
+                }
+            }
+            if triggered == false {
+                currentPlan = Plans(context: context)
+                currentPlan?.name = workoutName
+            }
+        }
+        catch {}
+        for exercise in exercises {
+            triggered = false
+            let currentJoin = Join(context: context)
+            currentJoin.workout = currentPlan
+            currentJoin.reps = Int16(exercise.sets.count)
+            currentJoin.sets = Int16(exercise.sets[0].reps) ?? 3
+            for Edata in Exercisedata {
+                if exercise.name == Edata.name {
+                    let currentExercise = Edata
+                    triggered = true
+                    currentJoin.exercise = currentExercise
+                    break
+                }
+            }
+            if triggered == false {
+                let currentExercise = Exercises(context: context)
+                currentExercise.name = exercise.name
+                currentJoin.exercise = currentExercise
+            }
+        }
+        try? context.save()
+    }
 }
-
 #Preview {
     NavigationStack {
         WorkoutView()
