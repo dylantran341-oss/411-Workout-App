@@ -16,9 +16,9 @@ struct ContentView: View {
                     HomeButtonView(title: "Strength Tracker", color: .orange)
                 }
                 
-                NavigationLink(destination: ExerciseGalleryView()) {
-                    HomeButtonView(title: "Exercise Gallery", color: .purple)
-                }
+//                NavigationLink(destination: ExerciseGalleryView()) {
+//                    HomeButtonView(title: "Exercise Gallery", color: .purple)
+//                }
                 
                 Spacer()
             }

@@ -4,11 +4,9 @@ import Charts
 
 // Data Models
 
-/// A custom data structure representing a single point on our line graph.
-/// It holds the date (X-Axis), the total score (Y-Axis), and the specific sets lifted that day.
+// A custom data structure representing a single point on our line graph.
 struct ChartDataPoint: Identifiable {
-    // FIX: We use the Date as the unique ID instead of a random UUID().
-    // If we used UUID(), the ID would scramble every time you tapped the screen, causing the pop-up to instantly close.
+    // Use the Date as the unique ID
     var id: Date { date }
     
     let date: Date          // The day the workout occurred
@@ -17,32 +15,32 @@ struct ChartDataPoint: Identifiable {
 }
 
 struct StrengthTrackerView: View {
-    // MARK: - Core Data Connection
+    // Core Data Connection
     
-    /// Connects to the app's live database so we can read and delete data
+    // Connects to the app's live database to read and delete data
     @Environment(\.managedObjectContext) private var viewContext
     
-    /// Automatically fetches all 'Exercise_log' folders from the live database.
-    /// We sort them chronologically (oldest to newest) based on the Date they were performed.
+    // Automatically fetches all 'Exercise_log' folders from the live database.
+    // Sort them chronologically (oldest to newest) based on the Date they were performed.
     @FetchRequest(
         entity: Exercise_log.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Exercise_log.date, ascending: true)],
         animation: .default)
     private var allExerciseLogs: FetchedResults<Exercise_log>
     
-    // MARK: - User Interface State
+    // User Interface State
     
-    /// Tracks which exercise the user currently has selected in the top dropdown tab
+    // Tracks which exercise the user currently has selected in the top dropdown tab
     @State private var selectedExercise: String = ""
     
-    /// Tracks the exact Date of the data point the user tapped on.
-    /// If this is nil, no pop-up card is shown. If it has a Date, the card for that point stays open.
+    // Tracks the exact Date of the data point the user tapped on.
+    // If this is nil, no pop-up card is shown. If it has a Date, the card for that point stays open.
     @State private var activeDate: Date?
     
-    // MARK: - Dynamic Data Processing
+    // Dynamic Data Processing
     
-    /// Scans your entire database to find which exercises you have *actually* performed.
-    /// This creates the tabs at the top automatically based on your real workout history, instead of hardcoding them.
+    // Scans the entire database to find which exercises you have actually performed.
+    // This creates the tabs at the top automatically based on your real workout history, instead of hardcoding them.
     var availableExercises: [String] {
         // 1. Get just the names of the exercises from every log
         let names = allExerciseLogs.compactMap { $0.exercise?.name }
@@ -54,8 +52,8 @@ struct StrengthTrackerView: View {
         return uniqueNames.isEmpty ? ["No Data Yet"] : uniqueNames
     }
     
-    /// The engine of the graph. It takes the raw Core Data, filters it, does the math,
-    /// and packages it into the `ChartDataPoint` array that Swift Charts requires.
+    // The engine of the graph. It takes the raw Core Data, filters it, does the math,
+    // and packages it into the `ChartDataPoint` array that Swift Charts requires.
     var chartData: [ChartDataPoint] {
         
         // 1. Throw away any logs that don't match the currently selected exercise tab (e.g., ignore Squats if Bench Press is selected)
@@ -102,14 +100,14 @@ struct StrengthTrackerView: View {
         chartData.first { $0.date == activeDate }
     }
 
-    // MARK: - User Interface Definition
+    // User Interface Definition
     
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
                 
                 // --- DYNAMIC EXERCISE SELECTOR ---
-                // A segmented toggle at the top of the screen to switch between your real exercises
+                // A segmented toggle at the top of the screen to switch between exercises
                 Picker("Exercise", selection: $selectedExercise) {
                     ForEach(availableExercises, id: \.self) { exercise in
                         Text(exercise).tag(exercise)
@@ -122,7 +120,7 @@ struct StrengthTrackerView: View {
                 .onChange(of: selectedExercise) { _ in activeDate = nil }
                 
                 // --- THE CHART AREA ---
-                // If there is no data for this exercise, show a friendly empty state
+                // If there is no data for this exercise, show an empty state
                 if chartData.isEmpty {
                     VStack {
                         Spacer()
@@ -197,14 +195,12 @@ struct StrengthTrackerView: View {
                             
                             // Body: A ScrollView looping through every set done that day
                             ScrollView {
-                                // Because Set_log in the main branch doesn't explicitly save a "Set 1, Set 2" number,
-                                // we use Swift's `zip(1..., array)` to automatically pair the sets with a number counting up from 1!
+                                // Automatically pair the sets with a number counting up from 1
                                 ForEach(Array(zip(1..., details.sets)), id: \.0) { index, set in
                                     HStack {
                                         Text("Set \(index)")
                                             .foregroundColor(.secondary)
                                         Spacer()
-                                        // Because weight is an Int16 in main, we don't need decimal specifiers
                                         Text("\(set.weight) lbs  ×  \(set.reps) reps")
                                             .fontWeight(.medium)
                                     }
@@ -248,7 +244,7 @@ struct StrengthTrackerView: View {
             }
             .navigationTitle("Strength Tracker")
             
-            // When the view opens, if an exercise isn't selected yet, automatically select the first tab!
+            // When the view opens, if an exercise isn't selected yet, automatically select the first tab
             .onAppear {
                 if let first = availableExercises.first, selectedExercise.isEmpty || !availableExercises.contains(selectedExercise) {
                     selectedExercise = first
@@ -257,9 +253,9 @@ struct StrengthTrackerView: View {
         }
     }
     
-    // MARK: - Database Utilities
+    // Database Utilities
     
-    /// Deletes all Exercise Logs from the live database. (A useful reset button while testing)
+    // Deletes all Exercise Logs from the live database. (A useful reset button while testing)
     private func clearAllData() {
         for log in allExerciseLogs {
             viewContext.delete(log)
